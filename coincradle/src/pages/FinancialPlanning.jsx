@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import FinanceDataContext from '../contexts/FinanceDataContext';
 import { aiService } from '../services/ai.service';
-import { LineChart, ProgressBar } from '../components/ui';
+import LineChart from "../components/ui/LineChart";
+import ProgressBar from "../components/ui/ProgressBar";
 
 const FinancialPlanning = () => {
   const { goals, accounts, investments, budgets, loading, createGoal } = useContext(FinanceDataContext);

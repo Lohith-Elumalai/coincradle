@@ -4,7 +4,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import FinanceDataContext from '../contexts/FinanceDataContext';
 import { financeApi } from '../api/finance';
 import { aiService } from '../services/ai.service';
-import { LineChart, PieChart } from '../components/ui';
+import { LineChart } from '../components/ui/LineChart';
+import { PieChart } from '../components/ui/PieChart';
 
 const Investments = () => {
   const { investments, loading } = useContext(FinanceDataContext);

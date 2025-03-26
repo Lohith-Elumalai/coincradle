@@ -1,5 +1,6 @@
 import React from 'react';
-import { LineChart, PieChart } from '../ui';
+import LineChart from "../ui/LineChart";
+import PieChart from "../ui/PieChart";
 
 const SpendingInsights = ({ trends, loading }) => {
   if (loading) {
