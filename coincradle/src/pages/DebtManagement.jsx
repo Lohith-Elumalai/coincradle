@@ -730,10 +730,9 @@ const DebtManagement = () => {
           </button>
         </div>
       )}
-=======
+
       <PaymentPlan debts={debts} />
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
->>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+
     </div>
   );
 };
