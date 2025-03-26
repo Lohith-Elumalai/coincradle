@@ -669,4 +669,8 @@ const RetirementPlanner = () => {
   );
 };
 
+<<<<<<< HEAD
 export default RetirementPlanner;
+=======
+export default RetirementPlanner;  
+>>>>>>> 90f4c3c0eab1b84503414e75a7583d3b4ab02142
