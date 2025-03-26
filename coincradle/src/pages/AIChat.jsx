@@ -219,7 +219,7 @@ const AIChat = () => {
         {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </div>
     </ProtectedRoute>
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
+
   );
 };
 
