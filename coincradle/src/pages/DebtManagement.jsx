@@ -1,13 +1,10 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+
+
 import React, { useState, useContext, useEffect } from 'react';
 import FinanceDataContext from '../contexts/FinanceDataContext';
 import { aiService } from '../services/ai.service';
 import { LineChart, ProgressBar } from '../components/ui';
-<<<<<<< HEAD
-=======
+
 
 const DebtManagement = () => {
   const { debts, loading } = useContext(FinanceDataContext);
@@ -365,7 +362,7 @@ const DebtManagement = () => {
           </button>
         </div>
       )}
-=======
+
 import { useContext } from 'react';
 import { FinanceDataContext } from '../contexts/FinanceDataContext';
 import DebtOverview from '../components/debt/DebtOverview';
@@ -456,7 +453,7 @@ const DebtManagement = () => {
           Add Debt
         </button>
       </div>
-<<<<<<< HEAD
+
       
       {loading.debts ? (
         <div className="flex h-64 items-center justify-center rounded-lg bg-white shadow-md">
