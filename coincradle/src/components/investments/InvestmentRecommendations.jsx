@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // src/components/investments/InvestmentRecommendations.jsx
+=======
+>>>>>>> 67a2b5ae3ea6b9a1b13c742106a90a0babea9ea8
 import React, { useEffect, useState } from 'react';
 import { aiService } from '../../services/ai.service';
 
