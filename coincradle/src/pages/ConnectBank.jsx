@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 // src/pages/ConnectBank.jsx
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -248,7 +248,7 @@ const ConnectBank = () => {
         )}
       </div>
     </div>
-=======
+
 import { useContext } from 'react';
 import { FinanceDataContext } from '../contexts/FinanceDataContext';
 import { ProtectedRoute } from '../components/guards/ProtectedRoute';
