@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useContext } from 'react';
 import FinanceDataContext from '../contexts/FinanceDataContext';
 import { aiService } from '../services/ai.service';
@@ -593,6 +594,36 @@ const FinancialPlanning = () => {
           </div>
         </div>
       )}
+=======
+import { useContext, useState } from 'react';
+import { FinanceDataContext } from '../contexts/FinanceDataContext';
+import GoalSetting from '../components/planner/GoalSetting';
+import RetirementPlanner from '../components/planner/RetirementPlanner';
+
+const FinancialPlanning = () => {
+  const { goals } = useContext(FinanceDataContext);
+  const [activeTab, setActiveTab] = useState('goals');
+
+  return (
+    <div className="p-4 space-y-4">
+      <div className="tabs">
+        <button
+          className={`tab ${activeTab === 'goals' ? 'tab-active' : ''}`}
+          onClick={() => setActiveTab('goals')}
+        >
+          Goals
+        </button>
+        <button
+          className={`tab ${activeTab === 'retirement' ? 'tab-active' : ''}`}
+          onClick={() => setActiveTab('retirement')}
+        >
+          Retirement
+        </button>
+      </div>
+      
+      {activeTab === 'goals' && <GoalSetting goals={goals} />}
+      {activeTab === 'retirement' && <RetirementPlanner />}
+>>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
     </div>
   );
 };
