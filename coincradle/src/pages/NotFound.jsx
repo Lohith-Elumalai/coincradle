@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 // src/pages/NotFound.jsx
 import React from 'react';
-=======
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
   return (
-<<<<<<< HEAD
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 text-center">
       <div className="rounded-lg bg-white p-8 shadow-md">
         <svg
@@ -49,19 +45,6 @@ const NotFound = () => {
           </Link>
         </div>
       </div>
-=======
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
-      <h1 className="text-9xl font-bold text-gray-800 mb-4">404</h1>
-      <p className="text-xl text-gray-600 mb-8">
-        Oops! The page you're looking for doesn't exist.
-      </p>
-      <Link 
-        to="/" 
-        className="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition-colors"
-      >
-        Return to Dashboard
-      </Link>
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
     </div>
   );
 };
