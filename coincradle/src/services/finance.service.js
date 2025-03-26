@@ -3,10 +3,10 @@ import financeApi from '../api/finance';
 import transactionsApi from '../api/transactions';
 import bankApi from '../api/bankApi';
 import budgetApi from '../api/budgetApi';
-import { formatCurrency } from '../utils/formatters';
-import { formatDate } from '../utils/formatters';
-import { calculateGrowth } from '../utils/calculations';
-import { calculateAverages } from '../utils/calculations';
+import { formatCurrency } from '../utils/formattters.js';
+import { formatDate } from '../utils/formattters.js';
+import { calculateGrowth } from '../utils/calculations.js';
+import { calculateAverages } from '../utils/calculations.js';
 
 class FinanceService {
   // Financial overview methods
