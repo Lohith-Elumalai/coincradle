@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+
 import React, { useState, useEffect, useContext } from 'react';
 import FinanceDataContext from '../contexts/FinanceDataContext';
 import { aiService } from '../services/ai.service';
 import { LineChart, ProgressBar } from '../components/ui';
-<<<<<<< HEAD
-=======
+
 
 const FinancialPlanning = () => {
   const { goals, accounts, investments, budgets, loading, createGoal } = useContext(FinanceDataContext);
@@ -599,12 +595,12 @@ const FinancialPlanning = () => {
           </div>
         </div>
       )}
-=======
+
 import { useContext, useState } from 'react';
 import { FinanceDataContext } from '../contexts/FinanceDataContext';
 import GoalSetting from '../components/planner/GoalSetting';
 import RetirementPlanner from '../components/planner/RetirementPlanner';
->>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+
 
 const FinancialPlanning = () => {
   const { goals, accounts, investments, budgets, loading, createGoal } = useContext(FinanceDataContext);
@@ -717,7 +713,7 @@ const FinancialPlanning = () => {
           Create Goal
         </button>
       </div>
-<<<<<<< HEAD
+
 
       {/* Tabs */}
       <div className="border-b border-gray-200">
@@ -1198,12 +1194,11 @@ const FinancialPlanning = () => {
           </div>
         </div>
       )}
-=======
+
       
       {activeTab === 'goals' && <GoalSetting goals={goals} />}
       {activeTab === 'retirement' && <RetirementPlanner />}
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
->>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+
     </div>
   );
 };
