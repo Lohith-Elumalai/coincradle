@@ -17,6 +17,8 @@ export const FinanceDataProvider = ({ children }) => {
   const [debts, setDebts] = useState([]);
   const [goals, setGoals] = useState([]);
   const [insights, setInsights] = useState(null);
+  
+  // Loading states for different data types
   const [loading, setLoading] = useState({
     transactions: false,
     accounts: false,
@@ -26,6 +28,8 @@ export const FinanceDataProvider = ({ children }) => {
     goals: false,
     insights: false
   });
+  
+  // Error state
   const [error, setError] = useState(null);
 
   // Fetch user's financial data when authenticated
@@ -225,6 +229,83 @@ export const FinanceDataProvider = ({ children }) => {
     }
   };
 
+  // Update a goal
+  const updateGoal = async (goalId, goalData) => {
+    try {
+      const updatedGoal = await financeApi.updateGoal(goalId, goalData);
+      setGoals(prev => 
+        prev.map(goal => goal.id === goalId ? updatedGoal : goal)
+      );
+      return updatedGoal;
+    } catch (err) {
+      setError(err.message || 'Failed to update goal');
+      throw err;
+    }
+  };
+
+  // Delete a goal
+  const deleteGoal = async (goalId) => {
+    try {
+      await financeApi.deleteGoal(goalId);
+      setGoals(prev => prev.filter(goal => goal.id !== goalId));
+    } catch (err) {
+      setError(err.message || 'Failed to delete goal');
+      throw err;
+    }
+  };
+
+  // Add an investment
+  const addInvestment = async (investmentData) => {
+    try {
+      const newInvestment = await financeApi.addInvestment(investmentData);
+      setInvestments(prev => [...prev, newInvestment]);
+      return newInvestment;
+    } catch (err) {
+      setError(err.message || 'Failed to add investment');
+      throw err;
+    }
+  };
+
+  // Update an investment
+  const updateInvestment = async (investmentId, investmentData) => {
+    try {
+      const updatedInvestment = await financeApi.updateInvestment(investmentId, investmentData);
+      setInvestments(prev => 
+        prev.map(investment => investment.id === investmentId ? updatedInvestment : investment)
+      );
+      return updatedInvestment;
+    } catch (err) {
+      setError(err.message || 'Failed to update investment');
+      throw err;
+    }
+  };
+
+  // Add debt
+  const addDebt = async (debtData) => {
+    try {
+      const newDebt = await financeApi.addDebt(debtData);
+      setDebts(prev => [...prev, newDebt]);
+      return newDebt;
+    } catch (err) {
+      setError(err.message || 'Failed to add debt');
+      throw err;
+    }
+  };
+
+  // Update debt
+  const updateDebt = async (debtId, debtData) => {
+    try {
+      const updatedDebt = await financeApi.updateDebt(debtId, debtData);
+      setDebts(prev => 
+        prev.map(debt => debt.id === debtId ? updatedDebt : debt)
+      );
+      return updatedDebt;
+    } catch (err) {
+      setError(err.message || 'Failed to update debt');
+      throw err;
+    }
+  };
+
   // Get spending trends
   const getSpendingTrends = async (period = 'month') => {
     try {
@@ -257,6 +338,31 @@ export const FinanceDataProvider = ({ children }) => {
     }
   };
 
+  // Update transaction
+  const updateTransaction = async (transactionId, transactionData) => {
+    try {
+      const updatedTransaction = await transactionApi.updateTransaction(transactionId, transactionData);
+      setTransactions(prev => 
+        prev.map(transaction => transaction.id === transactionId ? updatedTransaction : transaction)
+      );
+      return updatedTransaction;
+    } catch (err) {
+      setError(err.message || 'Failed to update transaction');
+      throw err;
+    }
+  };
+
+  // Delete transaction
+  const deleteTransaction = async (transactionId) => {
+    try {
+      await transactionApi.deleteTransaction(transactionId);
+      setTransactions(prev => prev.filter(transaction => transaction.id !== transactionId));
+    } catch (err) {
+      setError(err.message || 'Failed to delete transaction');
+      throw err;
+    }
+  };
+
   const value = {
     transactions,
     accounts,
@@ -277,9 +383,17 @@ export const FinanceDataProvider = ({ children }) => {
     saveBudget,
     connectBankAccount,
     createGoal,
+    updateGoal,
+    deleteGoal,
+    addInvestment,
+    updateInvestment,
+    addDebt,
+    updateDebt,
     getSpendingTrends,
     getRecommendations,
     addTransaction,
+    updateTransaction,
+    deleteTransaction,
     setError
   };
 
