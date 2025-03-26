@@ -368,7 +368,7 @@ import { FinanceDataContext } from '../contexts/FinanceDataContext';
 import DebtOverview from '../components/debt/DebtOverview';
 import PaymentPlan from '../components/debt/PaymentPlan';
 import CreditScore from '../components/debt/CreditScore';
->>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+
 
 const DebtManagement = () => {
   const { debts, loading } = useContext(FinanceDataContext);
