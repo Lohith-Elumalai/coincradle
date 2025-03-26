@@ -1,3 +1,4 @@
+// Continuing src/pages/Investments.jsx
 import React, { useState, useEffect, useContext } from 'react';
 import FinanceDataContext from '../contexts/FinanceDataContext';
 import { financeApi } from '../api/finance';
@@ -118,6 +119,7 @@ const Investments = () => {
           </button>
         </div>
       </div>
+
 
       {loading.investments ? (
         <div className="flex h-64 items-center justify-center rounded-lg bg-white shadow-md">
@@ -285,64 +287,65 @@ const Investments = () => {
                           </div>
                         </td>
                       </tr>
-    );
-  })}
-</tbody>
-</table>
-</div>
-</div>
+                
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-{/* AI Recommendations */}
-{recommendations && (
-<div className="rounded-lg bg-white p-6 shadow-md">
-<div className="flex items-center">
-<svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-</svg>
-<h2 className="text-lg font-medium text-gray-800">AI Investment Recommendations</h2>
-</div>
-
-<div className="mt-4 rounded-lg bg-blue-50 p-4">
-<p className="text-blue-800">{recommendations.summary}</p>
-</div>
-
-<div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-{recommendations.suggestions.map((suggestion, index) => (
-  <div key={index} className="rounded-lg border border-gray-200 p-4">
-    <h3 className="mb-2 font-medium text-gray-800">{suggestion.title}</h3>
-    <p className="text-sm text-gray-600">{suggestion.description}</p>
-    {suggestion.ticker && (
-      <div className="mt-2">
-        <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-          {suggestion.ticker}
-        </span>
-      </div>
-    )}
-  </div>
-))}
-</div>
-</div>
-)}
-</>
-) : (
-<div className="flex flex-col items-center justify-center rounded-lg bg-white p-8 shadow-md">
-<svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-<h2 className="mt-4 text-xl font-medium text-gray-800">No Investments Found</h2>
-<p className="mt-2 text-center text-gray-600">
-You don't have any investments added to your portfolio yet. Add your first investment to get started.
-</p>
-<button
-onClick={() => {/* Add implementation */}}
-className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
->
-Add Investment
-</button>
-</div>
-)}
-</div>
-);
+          {/* AI Recommendations */}
+          {recommendations && (
+            <div className="rounded-lg bg-white p-6 shadow-md">
+              <div className="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h2 className="text-lg font-medium text-gray-800">AI Investment Recommendations</h2>
+              </div>
+              
+              <div className="mt-4 rounded-lg bg-blue-50 p-4">
+                <p className="text-blue-800">{recommendations.summary}</p>
+              </div>
+              
+              <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {recommendations.suggestions.map((suggestion, index) => (
+                  <div key={index} className="rounded-lg border border-gray-200 p-4">
+                    <h3 className="mb-2 font-medium text-gray-800">{suggestion.title}</h3>
+                    <p className="text-sm text-gray-600">{suggestion.description}</p>
+                    {suggestion.ticker && (
+                      <div className="mt-2">
+                        <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
+                          {suggestion.ticker}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="flex flex-col items-center justify-center rounded-lg bg-white p-8 shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <h2 className="mt-4 text-xl font-medium text-gray-800">No Investments Found</h2>
+          <p className="mt-2 text-center text-gray-600">
+            You don't have any investments added to your portfolio yet. Add your first investment to get started.
+          </p>
+          <button
+            onClick={() => {/* Add implementation */}}
+            className="mt-4 rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+          >
+            Add Investment
+          </button>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default Investments;

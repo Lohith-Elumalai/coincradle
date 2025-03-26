@@ -1,19 +1,12 @@
-<<<<<<< HEAD
 // src/pages/Dashboard.jsx
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../contexts/AuthContext';
 import FinanceDataContext from '../contexts/FinanceDataContext';
-=======
-import { useContext } from 'react';
-import { FinanceDataContext } from '../contexts/FinanceDataContext';
-import { ProtectedRoute } from '../components/guards/ProtectedRoute';
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
 import FinancialOverview from '../components/dashboard/FinancialOverview';
 import RecentTransactions from '../components/dashboard/RecentTransactions';
 import SpendingInsights from '../components/dashboard/SpendingInsights';
 import GoalProgress from '../components/dashboard/GoalProgress';
-<<<<<<< HEAD
 import { financeApi } from '../api/finance';
 
 const Dashboard = () => {
@@ -274,29 +267,6 @@ const Dashboard = () => {
         />
       </div>
     </div>
-=======
-
-const Dashboard = () => {
-  const { transactions, insights, goals } = useContext(FinanceDataContext);
-
-  return (
-    <ProtectedRoute>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
-        <div className="col-span-4">
-          <FinancialOverview />
-        </div>
-        <div className="col-span-4 md:col-span-2">
-          <SpendingInsights data={insights} />
-        </div>
-        <div className="col-span-4 md:col-span-2">
-          <GoalProgress goals={goals} />
-        </div>
-        <div className="col-span-4">
-          <RecentTransactions transactions={transactions} />
-        </div>
-      </div>
-    </ProtectedRoute>
->>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
   );
 };
 

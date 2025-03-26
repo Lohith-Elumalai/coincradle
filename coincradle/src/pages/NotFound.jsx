@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+// src/pages/NotFound.jsx
+import React from 'react';
+=======
+<<<<<<< HEAD
 import React from 'react';
 =======
 <<<<<<< HEAD
@@ -7,6 +11,7 @@ import React from 'react';
 =======
 >>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
 >>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+>>>>>>> c4a75179435ed40d086a86ccf240206126ca2efc
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
@@ -14,7 +19,10 @@ const NotFound = () => {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 >>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+>>>>>>> c4a75179435ed40d086a86ccf240206126ca2efc
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 px-4 text-center">
       <div className="rounded-lg bg-white p-8 shadow-md">
         <svg
@@ -58,6 +66,8 @@ const NotFound = () => {
       </div>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
       <h1 className="text-9xl font-bold text-gray-800 mb-4">404</h1>
@@ -72,6 +82,7 @@ const NotFound = () => {
       </Link>
 >>>>>>> 4404e68ff82ae876e615fd84634bb867448f2e6f
 >>>>>>> 3e5350dc878856366081bc3595ecfd1fb90a1a80
+>>>>>>> c4a75179435ed40d086a86ccf240206126ca2efc
     </div>
   );
 };
